@@ -35,7 +35,7 @@ public class PlantDetailFragment extends Fragment {
         args = PlantDetailFragmentArgs.fromBundle(getArguments());
         PlantDetailViewModelFactory plantDetailViewModelFactory = InjectorUtils.providePlantDetailViewModelFactory(getActivity(), args.getPlantId());
         plantDetailViewModel = new ViewModelProvider(requireActivity(),plantDetailViewModelFactory).get(PlantDetailViewModel.class);
-        binding.setViewModel(plantDetailViewModel);
+//        binding.setViewModel(plantDetailViewModel);
         return binding.getRoot();
     }
 }

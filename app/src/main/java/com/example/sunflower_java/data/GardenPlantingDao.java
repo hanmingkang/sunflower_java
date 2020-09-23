@@ -28,7 +28,7 @@ public interface GardenPlantingDao {
     LiveData<List<PlantAndGardenPlantings>> getPlantedGardens();
 
     @Insert
-    int insertGardenPlanting(GardenPlanting gardenPlanting);
+    long insertGardenPlanting(GardenPlanting gardenPlanting);
 
     @Delete
     void deleteGardenPlanting(GardenPlanting gardenPlanting);

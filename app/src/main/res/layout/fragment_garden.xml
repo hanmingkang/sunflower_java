@@ -21,9 +21,9 @@
 
     <data>
 
-        <variable
-                name="hasPlantings"
-                type="boolean" />
+<!--        <variable-->
+<!--                name="hasPlantings"-->
+<!--                type="boolean" />-->
 
     </data>
 
@@ -48,8 +48,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:gravity="center"
-                android:orientation="vertical"
-                app:isGone="@{hasPlantings}">
+                android:orientation="vertical">
 
             <TextView
                     android:id="@+id/empty_garden"
