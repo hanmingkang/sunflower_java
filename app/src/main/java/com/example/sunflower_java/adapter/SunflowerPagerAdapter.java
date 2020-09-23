@@ -1,6 +1,7 @@
 package com.example.sunflower_java.adapter;
 
 import android.os.Build;
+import android.util.Log;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
@@ -46,6 +47,6 @@ public class SunflowerPagerAdapter extends FragmentStateAdapter {
 
     @Override
     public int getItemCount() {
-        return 0;
+        return 2;
     }
 }

@@ -1,6 +1,7 @@
 package com.example.sunflower_java;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -8,6 +9,7 @@ import android.widget.TableLayout;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.viewpager2.widget.ViewPager2;
 
@@ -30,18 +32,19 @@ public class HomeViewPagerFragment extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         FragmentViewPagerBinding binding = FragmentViewPagerBinding.inflate(inflater,container,false);
-        TabLayout tableLayout = binding.tabs;
+        TabLayout tabLayout = binding.tabs;
         ViewPager2 viewPager2 = binding.viewPager;
 
         viewPager2.setAdapter(new SunflowerPagerAdapter(this));
 
-        new TabLayoutMediator(tableLayout, viewPager2, new TabLayoutMediator.TabConfigurationStrategy() {
+        new TabLayoutMediator(tabLayout, viewPager2, new TabLayoutMediator.TabConfigurationStrategy() {
             @Override
             public void onConfigureTab(@NonNull TabLayout.Tab tab, int position) {
                 tab.setIcon(getTabIcon(position));
                 tab.setText(getTabTitle(position));
             }
         }).attach();
+        ((AppCompatActivity)getActivity()).setSupportActionBar(binding.toolbar);
         return binding.getRoot();
     }
 
